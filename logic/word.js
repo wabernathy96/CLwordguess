@@ -1,10 +1,25 @@
-var lts = require('./letter.js');
+var Letter = require('./letter.js');
 
-var Word = function (write) {
-    this.ltsArr = [];
-    this.write = write;
-    this.incorrectLts = 0;
-    this.ltsGuess = [];
-    this.init();
+// Word constructor
+var Word = function (werd) {
+    this.word = werd;
+    this.letterStore = []; 
 };
 
+// Methods of Word constructor
+Word.prototype.getLetters = function () {
+    for (i=0; i<this.word.length; i++){
+        var newLts = new Letter (this.word[i]);
+        this.letterStore.push(newLts);
+        return this.letterStore;
+    };
+};
+Word.prototype.returnWord = function () {
+
+};
+
+var newWord = new Word ('klingon');
+newWord.getLetters();
+
+
+module.exports = Word;

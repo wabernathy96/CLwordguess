@@ -1,23 +1,28 @@
 // Letter constructor
 var Letter = function (lts) {
     this.char = lts.toString().toUpperCase();
-    this.charGuess = false;
+    this.displayChar = false;
 };
 
 // Method on Letter constructor to showChar
 Letter.prototype.showChar = function () {
-    if (this.char == ''){
-        this.charGuess = false;
-        this.char = '_';
-        console.log(this.char);
-    }else{
-        this.charGuess = true;
+    if (this.char === ''){
+        this.displayChar = true;
+        this.char = '/';
         console.log(this.char);
     };
+    
+    if (this.displayChar){
+        return this.char;
+    }else{
+        this.char = '_'
+        return this.char;
+    }
 };
 
-// var lts1 = new Letter ('a');
-// lts1.showChar();
+// Test for letter constructor
+var ltsB = new Letter ('a');
+ltsB.showChar();
 
 
 module.exports = Letter;
