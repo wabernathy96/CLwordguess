@@ -14,8 +14,9 @@ Word.prototype.getLetters = function () {
         return this.letterStore;
     };
 };
-Word.prototype.returnWord = function () {
 
+Word.prototype.returnWord = function () {
+    
 };
 
 var newWord = new Word ('klingon');
